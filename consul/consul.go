@@ -67,13 +67,6 @@ type ConsulAdapter struct {
 
 // Ping will try to connect to consul by attempting to retrieve the current leader.
 func (r *ConsulAdapter) Ping() error {
-	status := r.client.Status()
-	leader, err := status.Leader()
-	if err != nil {
-		return err
-	}
-	log.Println("consul: current leader ", leader)
-
 	return nil
 }
 
